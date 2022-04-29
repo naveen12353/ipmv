@@ -1,0 +1,13 @@
+import cv2
+import matplotlib.pyplot as plt
+
+gry_img= cv2.imread(".jpg")
+cv2.imshow("Img",gry_img)
+
+#creating histogram
+hist = cv2.calcHist([gry_img],[0],None,[256],[0,256])
+
+plt.hist(gry_img.ravel(),256,[0,256])
+plt.title("Histogram for grayscale img")
+plt.show()
+cv2.waitKey(0)
