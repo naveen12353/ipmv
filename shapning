@@ -1,0 +1,12 @@
+import cv2
+import numpy as np
+#reading the image
+img=cv2.imread('tiger.jpg')
+#gaussian kernel for sharpening
+gaussian_blur=cv2.GaussianBlur(img,(7,7),2)
+#sharpening using addweighted()
+sharpened=cv2.addWeighted(img,1.5,gaussian_blur,-0.5,0)
+#showing the sharpened img
+cv2.imshow('Sharpened',sharpened)
+cv2.imshow('original',img)
+cv2.waitKey(0)
