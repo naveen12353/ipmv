@@ -1,0 +1,9 @@
+import cv2 as cv
+import numpy as np
+import matplotlib.pyplot as plt
+img = cv.imread('dog.jpg',0)
+kernel = np.ones((5,5),np.uint8)
+opening = cv.morphologyEx(img, cv.MORPH_OPEN, kernel)
+cv.imshow('opening', opening)
+plt.imshow(opening)
+plt.show()
