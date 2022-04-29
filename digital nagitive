@@ -1,0 +1,24 @@
+import cv2
+import numpy as np
+import matplotlib.pyplot as plt
+from PIL import Image
+img=Image.open("group.jpg")
+w,h=img.size
+for i in range(w):
+for j in range(h):
+r,g,b=img.getpixel((i,j))
+r=255-r
+g=255-g
+b=255-b
+img.putpixel((i,j),(r,g,b))
+plt.axis('off')
+plt.imshow(img)
+OR
+#image negative transformation
+import cv2
+img=cv2.imread('dog.jpg')
+negative_img=255 - img
+cv2.imshow('input image',img)
+cv2.imshow('image negative',negative_img)
+cv2.waitKey(100000)
+cv2.destroyAllWindows()
