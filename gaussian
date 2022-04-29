@@ -1,0 +1,7 @@
+import cv2
+import numpy as np
+img=cv2.imread('tiger.jpg')
+gaussian_blur=cv2.GaussianBlur(img,(7,7),2)
+cv2.imshow('gaussianblur',gaussian_blur)
+cv2.imshow('original',img)
+cv2.waitKey(0)
